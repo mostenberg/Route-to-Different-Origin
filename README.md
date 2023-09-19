@@ -28,5 +28,5 @@ This code allows you to route specific paths defined in paths_list.js to an alte
 ### Akamai Property Setup
 
 - In your Akamai configuration, add a user variable called PMUSER_ORIGIN_ID . When this variable is set to a value of 'origin2' , we will use the 2nd origin. ![Figure 2](/images/CreateVariablePMUSER_ORIGIN_ID.jpg)
-- In your Akamai configuration, create a rule for your EdgeWorker. Set the rule so that the EdgeWorker will not execute on the types of requests that would not go to origin2 (e.g. probably only execute where file extension is html, empty etc). Add the EdgeWorker behavior and select the EdgeWorker that you created in previous steps [Figure 3](/images/EWConditionalRule.jpg)
-- In your Akamai configuration, create a rule which will use a second origin if the PMUSER_ORIGIN_ID variable has value 'origin2' [Figure 4](/images/Pick2ndOriginWhenFlagIsSet.jpg)
+- In your Akamai configuration, create a rule for your EdgeWorker. Set the rule so that the EdgeWorker will not execute on the types of requests that would not go to origin2 (e.g. probably only execute where file extension is html, empty etc). Add the EdgeWorker behavior and select the EdgeWorker that you created in previous steps ![Figure 3](/images/EWConditionalRule.jpg)
+- In your Akamai configuration, create a rule which will use a second origin if the PMUSER_ORIGIN_ID variable has value 'origin2' ![Figure 4](/images/Pick2ndOriginWhenFlagIsSet.jpg)
