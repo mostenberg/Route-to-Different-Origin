@@ -1,0 +1,4 @@
+{
+  "edgeworker-version": "0.991",
+  "description": "Switched to setting flag if path matches path in paths_list.js"
+}
