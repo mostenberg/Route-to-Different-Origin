@@ -55,3 +55,15 @@ This edgeworker works with an Akamai configuration. The Akamai configuration sho
 2. In your Akamai configuration, create a rule to run the EdgeWorker behavior and specify the EdgeWorker you created above.
 
 - In your Akamai configuration, create a series of origins. Each origin should have a rule such that the origin is only used if 'PMUSER_ORIGIN_ID' equals a certain value. Use a 'friendly name' for the origin as the value. For example, 'prod-spa' or 'prod-non-spa' or 'dev-spa'. ![Figure3](/images/SetupPropertyWithOriginRules.jpg)
+
+### Testing outside of EdgeWorkers
+
+This file also provides a local testing file called 'sandbox.js'. You can open sandbox.js and run it in VSCode (or other IDE) to test how different requests will be handled. To do this:
+
+- modify the data files:
+  - host_to_origins_map : Put in your different hosts and what their tags will be
+  - paths: Put in the paths which should route to alternate origin
+  - pathPatterns: Put in the patterns which should map to alternate origin
+  - pathExcludePatterns: Put in patters which should _not_ route to alternate origin
+- Modify the 'request' object to enter a request hostname and path to simulate an incoming request
+- Run the code and see what the result would be. When the output it as expected (it's setting the flags correctly), then you can use those values in your actual edgeWorker.
